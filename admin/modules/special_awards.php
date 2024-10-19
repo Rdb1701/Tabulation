@@ -79,7 +79,7 @@ include "dash/special_award.php";
                             }
                         }
                         echo "<td class='text-center'>" . $row['average_percentage'] . "</td>";
-                        // Apply background color based on rank
+                      
                         $rank = (int)$row['overall_rank'];
                         $bg_color = '';
                         switch ($rank) {
@@ -151,11 +151,11 @@ include "dash/special_award.php";
                         foreach ($row as $key => $value) {
                             if (strpos($key, 'judge_') !== false) {
                                 if ($value !== null) {
-                                    // Split the concatenated value into total percentage and rank per judge
+                                
                                     list($percentage, $rank) = explode(' ', $value);
                                     echo '<td class="text-center bg-light">' . $percentage . '</td>';
                                     echo '<td class="text-center bg-light">' . $rank . '</td>';
-                                    $hasData = true; // Data exists, set flag to true
+                                    $hasData = true; 
                                 } else {
                                     echo '<td class="text-center"></td>';
                                     echo '<td class="text-center"></td>';
@@ -163,7 +163,7 @@ include "dash/special_award.php";
                             }
                         }
                         echo "<td class='text-center'>" . $row['average_rank'] . "</td>";
-                        // Apply background color based on rank
+                       
                         $rank = (int)$row['average_final_rank'];
                         $bg_color = '';
                         switch ($rank) {
@@ -208,18 +208,17 @@ include "dash/special_award.php";
                     title: '.',
                     message: function() {
                         return '<div style="position:relative;">\
-                            <img src="../assets/images/loreto1.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
-                            <img src="../assets/images/sfxc.png" height="100px" width="100px" style="position: absolute;top:0;left:150px;">\
-                            <center><h4 style="margin-top:-40px;">SPECIAL AWARDS SUMMARY</h4><h6>SFXC TABULATION SYSTEM</h6></center><br><br>\
+                            <img src="../assets/images/angot_logo.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
+                            <center><h4 style="margin-top:-40px;">SPECIAL AWARDS SUMMARY</h4><h6>TABULATION SYSTEM</h6></center><br><br>\
                             <center><h5>Best in <?php echo $criteria_desc; ?></h5></center>\
                         </div>';
                     },
                     customize: function(win) {
 
 
-                        $(win.document.body).find('table').addClass('table-bordered'); // Add border to printed table
+                        $(win.document.body).find('table').addClass('table-bordered'); 
 
-                        // Apply background color to the last column of each row based on row data
+                       
                         $(win.document.body).find('table tr').each(function() {
                             var rank = parseInt($(this).find('td:last-child').text().trim());
                             var bgColor = '';
@@ -232,9 +231,13 @@ include "dash/special_award.php";
                             }
                             $(this).find('td:last-child').css('background-color', bgColor);
                             $(this).find('td:last-child').css('font-weight', 'bold');
+
+                            
+                            $(this).find('td:nth-child(1)').css('background-color', bgColor);
+                            $(this).find('td:nth-child(1)').css('font-weight', 'bold');
                         });
 
-                        //Remove Body Background color
+                        
                         $(win.document.body).css('background-color', 'transparent');
                         $(win.document.body).find('table').addClass('table-bordered').css('border-color', 'green');
                     }
@@ -263,18 +266,16 @@ include "dash/special_award.php";
                     title: '.',
                     message: function() {
                         return '<div style="position:relative;">\
-                            <img src="../assets/images/loreto1.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
-                            <img src="../assets/images/sfxc.png" height="100px" width="100px" style="position: absolute;top:0;left:150px;">\
-                            <center><h4 style="margin-top:-40px;">SPECIAL AWARDS SUMMARY</h4><h6>SFXC TABULATION SYSTEM</h6></center><br><br>\
+                            <img src="../assets/images/angot_logo.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
+                            <center><h4 style="margin-top:-40px;">SPECIAL AWARDS SUMMARY</h4><h6>TABULATION SYSTEM</h6></center><br><br>\
                             <center><h5>Best in <?php echo $criteria_desc; ?></h5></center>\
                         </div>';
                     },
                     customize: function(win) {
 
 
-                        $(win.document.body).find('table').addClass('table-bordered'); // Add border to printed table
+                        $(win.document.body).find('table').addClass('table-bordered'); 
 
-                        // Apply background color to the last column of each row based on row data
                         $(win.document.body).find('table tr').each(function() {
                             var rank = parseInt($(this).find('td:last-child').text().trim());
                             var bgColor = '';
@@ -287,9 +288,12 @@ include "dash/special_award.php";
                             }
                             $(this).find('td:last-child').css('background-color', bgColor);
                             $(this).find('td:last-child').css('font-weight', 'bold');
+
+                            // Apply the same background color to the first child
+                            $(this).find('td:nth-child(1)').css('background-color', bgColor);
+                            $(this).find('td:nth-child(1)').css('font-weight', 'bold');
                         });
 
-                        //Remove Body Background color
                         $(win.document.body).css('background-color', 'transparent');
                         $(win.document.body).find('table').addClass('table-bordered').css('border-color', 'green');
                     }

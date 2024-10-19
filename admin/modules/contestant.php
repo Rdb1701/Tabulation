@@ -127,7 +127,7 @@
 
     // Initialize DataTable
     var table = $('#myTable').DataTable({
-        ajax: 'contestants/contestant_view', // API endpoint to fetch data
+        ajax: 'contestants/contestant_view', 
         "ordering": false,
         searching: false, paging: false,
         columns: [{

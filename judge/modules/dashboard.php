@@ -8,8 +8,8 @@
   <thead class="table-light">
     <tr>
       <th class="text-center" style="width: 300px;"></th>
-      <th class="text-center" style="width: 400px;">Criteria of Judging</th>
-      <th class="text-center">Score(1 -10)</th>
+      <th class="text-center" style="width: 400px;">Criteria for Judging</th>
+      <th class="text-center">Score(0 -10)</th>
       <th class="text-center">% Equivalent</th>
     </tr>
   </thead>
@@ -31,8 +31,9 @@
 
     // Check if the input value is empty
     if (score.trim() === '') {
-      return; // Exit the function if empty
+      return; 
     }
+
 
     if (score > 10) {
       swal("Maximum Score is 10. Please Input Again", '', 'error')

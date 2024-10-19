@@ -58,7 +58,7 @@ if (mysqli_num_rows($result_criteria) > 0) {
 }
 
 
-// Insert into t_tabulations for each combination of contestant_round_id, user_id, and criteria_id
+// Insert into tabulations for each combination of contestant_round_id, user_id, and criteria_id
 foreach ($contestant_round_id as $key => $value) {
     foreach ($users as $keys => $values) {
         foreach ($criteria_id as $keyss => $valuess) {

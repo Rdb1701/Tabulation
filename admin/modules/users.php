@@ -134,7 +134,7 @@ include "../header.php";
 
         // Initialize DataTable
         var table = $('#myTable').DataTable({
-            ajax: 'user/user_view', // API endpoint to fetch data
+            ajax: 'user/user_view', 
             searching: false,
             paging: false,
             "ordering": false,

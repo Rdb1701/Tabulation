@@ -128,7 +128,7 @@ include "modal/modal_criteria.php";
 
     // Initialize DataTable
     var table = $('#myTable').DataTable({
-        ajax: 'criteria_judging/criteria_view', // API endpoint to fetch data
+        ajax: 'criteria_judging/criteria_view', 
         "ordering": false,
         searching: false, paging: false,
         columns: [{

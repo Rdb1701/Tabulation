@@ -65,7 +65,7 @@ foreach ($display as $key => $value) {
     }
 
     //input Score
-    $input_score = '<input type="number" value = "'.$value['score'].'" name="" class="add_score text-center" onblur="score_put(this, '.$value['tabulation_id'].')" style="width:200px;height:70px;" maxlength="4.0" step="0.01"
+    $input_score = '<input type="number" value = "'.$value['score'].'" name="" class="add_score text-center" onblur="score_put(this, '.$value['tabulation_id'].')" style="width:200px;height:70px;" maxlength="5.0" step="0.01"
     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">';
 
     $contestant_name = "<h5 class='text-center fw-bold'>".$value['contestant_name']."</h5>";

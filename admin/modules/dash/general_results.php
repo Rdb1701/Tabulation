@@ -72,6 +72,9 @@ try {
             contestant_id,
             contestant_name,
             seq_no
+         ORDER BY
+            average_final_rank
+          
     ');
     
     PREPARE stmt FROM @sql;

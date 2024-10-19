@@ -16,6 +16,7 @@ include "dash/general_results.php"; // Include this file to access $general_resu
 </style>
 <h5><i class="fa fa-trophy"></i> General Tabulated Result</h5>
 <hr>
+<!-- <button class="btn btn-warning btn-sm" id="tabulated_summary_rank"> <i class="fa fa-print"></i> Print Queue Card</button><br><br> -->
 <div class="card radius-10">
     <div class="card-body">
         <h6> General Tabulated Summary Based on Percentage Per Judge</h6>
@@ -112,7 +113,7 @@ include "dash/general_results.php"; // Include this file to access $general_resu
 </div>
 
 
-
+<button class="btn btn-warning btn-sm" onclick="tabulated_summary_rank()"><i class="fa fa-print"></i> Print Queue Card</button><br><br>
 <div class="card radius-10">
     <div class="card-body">
         <h6> General Tabulated Summary Based on Rank Per Judge</h6>
@@ -166,16 +167,15 @@ include "dash/general_results.php"; // Include this file to access $general_resu
                                     list($percentage, $rank) = explode(' ', $value);
                                     echo '<td class="text-center bg-light">' . $percentage . '</td>';
                                     echo '<td class="text-center bg-light">' . $rank . '</td>';
-                                    $hasData = true; // Data exists, set flag to true
+                                    $hasData = true; 
                                 } else {
                                     echo '<td class="text-center"></td>';
                                     echo '<td class="text-center"></td>';
                                 }
                             }
                         }
-
                         echo "<td class='text-center'>" . $row['average_rank'] . "</td>";
-                        // Apply background color based on rank
+                      
                         $rank_avg = (int)$row['average_final_rank'];
                         $bg_color_rank = '';
                         switch ($rank_avg) {
@@ -230,16 +230,15 @@ include "dash/general_results.php"; // Include this file to access $general_resu
                     title: '.',
                     message: function() {
                         return '<div style="position:relative;">\
-                            <img src="../assets/images/loreto1.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
-                            <img src="../assets/images/sfxc.png" height="100px" width="100px" style="position: absolute;top:0;left:150px;">\
-                            <center><h4 style="margin-top:-40px;">GENERAL TABULATED SUMMARY</h4><h6>SFXC TABULATION SYSTEM</h6></center><br><br>\
+                            <img src="../assets/images/angot_logo.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
+                            <center><h4 style="margin-top:-40px;">GENERAL TABULATED SUMMARY</h4><h6>TABULATION SYSTEM</h6></center><br><br>\
                         </div>';
                     },
                     customize: function(win) {
 
-                        $(win.document.body).find('table').addClass('table-bordered'); // Add border to printed table
+                        $(win.document.body).find('table').addClass('table-bordered'); 
 
-                        // Apply background color to the last column of each row based on row data
+                       
                         $(win.document.body).find('table tr').each(function() {
                             var rank = parseInt($(this).find('td:last-child').text().trim());
                             var bgColor = '';
@@ -259,20 +258,18 @@ include "dash/general_results.php"; // Include this file to access $general_resu
                                 case 5:
                                     bgColor = 'gray';
                                     break;
-                                case 6:
-                                    bgColor = 'violet';
-                                    break;
-                                case 7:
-                                    bgColor = 'lightgray';
-                                    break;
-                                case 8:
-                                    bgColor = 'pink';
-                                    break;
                                 default:
                                     bgColor = '';
                             }
                             $(this).find('td:last-child').css('background-color', bgColor);
                             $(this).find('td:last-child').css('font-weight', 'bold');
+
+                           
+                            $(this).find('td:nth-child(1)').css('background-color', bgColor);
+                            $(this).find('td:nth-child(1)').css('font-weight', 'bold');
+                           
+                            // $(this).find('td:nth-child(2)').css('background-color', bgColor);
+                            // $(this).find('td:nth-child(2)').css('font-weight', 'bold');
                         });
                         //Remove Body Background color
                         $(win.document.body).css('background-color', 'transparent');
@@ -302,16 +299,15 @@ include "dash/general_results.php"; // Include this file to access $general_resu
                     title: '.',
                     message: function() {
                         return '<div style="position:relative;">\
-                            <img src="../assets/images/loreto1.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
-                            <img src="../assets/images/sfxc.png" height="100px" width="100px" style="position: absolute;top:0;left:150px;">\
-                            <center><h4 style="margin-top:-40px;">GENERAL TABULATED SUMMARY</h4><h6>SFXC TABULATION SYSTEM</h6></center><br><br>\
+                            <img src="../assets/images/angot_logo.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
+                            <center><h4 style="margin-top:-40px;">GENERAL TABULATED SUMMARY</h4><h6>TABULATION SYSTEM</h6></center><br><br>\
                         </div>';
                     },
                     customize: function(win) {
 
-                        $(win.document.body).find('table').addClass('table-bordered'); // Add border to printed table
+                        $(win.document.body).find('table').addClass('table-bordered');
 
-                        // Apply background color to the last column of each row based on row data
+                        
                         $(win.document.body).find('table tr').each(function() {
                             var rank = parseInt($(this).find('td:last-child').text().trim());
                             var bgColor = '';
@@ -331,20 +327,18 @@ include "dash/general_results.php"; // Include this file to access $general_resu
                                 case 5:
                                     bgColor = 'gray';
                                     break;
-                                case 6:
-                                    bgColor = 'violet';
-                                    break;
-                                case 7:
-                                    bgColor = 'lightgray';
-                                    break;
-                                case 8:
-                                    bgColor = 'pink';
-                                    break;
                                 default:
                                     bgColor = '';
                             }
                             $(this).find('td:last-child').css('background-color', bgColor);
                             $(this).find('td:last-child').css('font-weight', 'bold');
+
+                            
+                            $(this).find('td:nth-child(1)').css('background-color', bgColor);
+                            $(this).find('td:nth-child(1)').css('font-weight', 'bold');
+                            
+                            // $(this).find('td:nth-child(2)').css('background-color', bgColor);
+                            // $(this).find('td:nth-child(2)').css('font-weight', 'bold');
                         });
                         //Remove Body Background color
                         $(win.document.body).css('background-color', 'transparent');
@@ -354,4 +348,8 @@ include "dash/general_results.php"; // Include this file to access $general_resu
             ]
         });
     });
+
+    function tabulated_summary_rank() {
+        window.location.href = "print_que_rank"
+    }
 </script>

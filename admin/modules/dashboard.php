@@ -205,60 +205,60 @@ while ($row = mysqli_fetch_assoc($result)) {
             })
 
 
-            // var table = $('.my_table').DataTable({
-            //     "ordering": false,
-            //     "searching": false,
-            //     "paging": false,
-            //     "info": false,
-            //     dom: "Bfrtip",
-            //     buttons: [
-            //         {
-            //             extend: "print",
-            //             className: "btn-sm btn btn-success",
-            //             title: '.',
-            //             message: function() {
-            //         return '<div style="position:relative;">\
-            //             <img src="../assets/images/veruela.png" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
-            //             <img src="../assets/images/sfxc.png" height="100px" width="100px" style="position: absolute;top:0;left:150px;">\
-            //             <center><h4 style="margin-top:-40px;">DETAILED TABULATED SUMMARY</h4><h6>SFXC TABULATION SYSTEM</h6></center><br><br>\
-            //         </div>';
-            //     },
-            //     customize: function(win) {
-            //         // Add a print-specific style to remove body background color
-            //         $(win.document.body).find('style').append('body { background-color: white !important; }');
+        //     var table = $('.my_table').DataTable({
+        //         "ordering": false,
+        //         "searching": false,
+        //         "paging": false,
+        //         "info": false,
+        //         dom: "Bfrtip",
+        //         buttons: [
+        //             {
+        //                 extend: "print",
+        //                 className: "btn-sm btn btn-success",
+        //                 title: '.',
+        //                 message: function() {
+        //             return '<div style="position:relative;">\
+        //                 <img src="../assets/images/rosario.jpeg" height="100px" width="100px" style="position: absolute;top:0;left:50px;">\
+        //                 <img src="../assets/images/sfxc.png" height="100px" width="100px" style="position: absolute;top:0;left:150px;">\
+        //                 <center><h4 style="margin-top:-40px;">DETAILED TABULATED SUMMARY</h4><h6>SFXC TABULATION SYSTEM</h6></center><br><br>\
+        //             </div>';
+        //         },
+        //         customize: function(win) {
+        //             // Add a print-specific style to remove body background color
+        //             $(win.document.body).find('style').append('body { background-color: white !important; }');
 
-            //         $(win.document.body).find('table').addClass('table-bordered'); // Add border to printed table
+        //             $(win.document.body).find('table').addClass('table-bordered'); // Add border to printed table
 
-            //         // Apply background color to the last column of each row based on row data
-            //         $(win.document.body).find('table tr').each(function() {
-            //             var rank = parseInt($(this).find('td:last-child').text().trim());
-            //             var bgColor = '';
-            //             switch (rank) {
-            //                 case 1:
-            //                     bgColor = 'red';
-            //                     break;
-            //                 case 2:
-            //                     bgColor = 'yellow';
-            //                     break;
-            //                 case 3:
-            //                     bgColor = 'lightgreen';
-            //                     break;
-            //                 case 4:
-            //                     bgColor = 'skyblue';
-            //                     break;
-            //                 case 5:
-            //                     bgColor = 'gray';
-            //                     break;
-            //                 default:
-            //                     bgColor = '';
-            //             }
-            //             $(this).find('td:last-child').css('background-color', bgColor);
-            //             $(this).find('td:last-child').css('font-weight', 'bold');
-            //         });
-            //     }
-            //         }
-            //     ]
+        //             // Apply background color to the last column of each row based on row data
+        //             $(win.document.body).find('table tr').each(function() {
+        //                 var rank = parseInt($(this).find('td:last-child').text().trim());
+        //                 var bgColor = '';
+        //                 switch (rank) {
+        //                     case 1:
+        //                         bgColor = 'red';
+        //                         break;
+        //                     case 2:
+        //                         bgColor = 'yellow';
+        //                         break;
+        //                     case 3:
+        //                         bgColor = 'lightgreen';
+        //                         break;
+        //                     case 4:
+        //                         bgColor = 'skyblue';
+        //                         break;
+        //                     case 5:
+        //                         bgColor = 'gray';
+        //                         break;
+        //                     default:
+        //                         bgColor = '';
+        //                 }
+        //                 $(this).find('td:last-child').css('background-color', bgColor);
+        //                 $(this).find('td:last-child').css('font-weight', 'bold');
+        //             });
+        //         }
+        //             }
+        //         ]
 
-            // });
+        //     });
         })
     </script>
